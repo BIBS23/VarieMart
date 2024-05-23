@@ -4,7 +4,7 @@ import 'package:variemart/core/colors.dart';
 import 'package:variemart/features/home/bloc/home_bloc.dart';
 import 'package:variemart/features/products/bloc/product_bloc.dart';
 import 'package:variemart/features/products/views/product_view.dart';
-import 'package:variemart/features/widgets/product_card.dart';
+import 'package:variemart/widgets/product_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
