@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:variemart/core/endpoints.dart';
 import 'package:variemart/features/home/models/product.dart';

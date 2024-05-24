@@ -16,4 +16,7 @@ class ProductDetailState extends ProductState {
   ProductDetailState({
     required this.prodDetail,
   });
+
+  
 }
+

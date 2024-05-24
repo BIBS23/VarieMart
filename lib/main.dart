@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:variemart/features/cart/bloc/cart_bloc.dart';
 import 'package:variemart/features/home/bloc/home_bloc.dart';
 import 'package:variemart/features/products/bloc/product_bloc.dart';
 import 'package:variemart/splash_view.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProductBloc(),
+        ),
+         BlocProvider(
+          create: (context) => CartBloc()..add(MyCart()),
         ),
       ],
       child: const MaterialApp(

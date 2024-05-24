@@ -21,4 +21,6 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
         await ProductDetailRepo.fetchProductDetails(event.productId.toString());
     emit(ProductDetailState(prodDetail: productDetail));
   }
+
+ 
 }

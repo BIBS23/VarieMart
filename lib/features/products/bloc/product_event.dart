@@ -8,3 +8,4 @@ class FetchProductDetail extends ProductEvent {
 
   FetchProductDetail({required this.productId});
 }
+

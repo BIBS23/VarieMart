@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:variemart/core/colors.dart';
 import 'package:variemart/features/products/bloc/product_bloc.dart';
+import 'package:variemart/widgets/custom_btn_product_view.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({super.key});
@@ -48,19 +49,23 @@ class ProductDetailView extends StatelessWidget {
                     Text(
                       successState.prodDetail.category,
                       textAlign: TextAlign.justify,
-                      style: const TextStyle(fontSize: 15,color: kPrimaryColor,fontWeight: FontWeight.w900,letterSpacing: 4),
+                      style: const TextStyle(
+                          fontSize: 15,
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 4),
                     ),
                     const SizedBox(height: 15),
                     Text(
                       successState.prodDetail.title,
-                      style:
-                          const TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w300),
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "₹ ${successState.prodDetail.price.toString()}",
-                      style:
-                          const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                      "\$ ${successState.prodDetail.price.toString()}",
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w700),
                     ),
                     const SizedBox(height: 20),
                     const Text(
@@ -72,9 +77,8 @@ class ProductDetailView extends StatelessWidget {
                     Text(
                       successState.prodDetail.description,
                       textAlign: TextAlign.justify,
-                      style: const TextStyle(fontSize: 15,letterSpacing: 1),
+                      style: const TextStyle(fontSize: 15, letterSpacing: 1),
                     ),
-                      
                   ],
                 ),
               );
@@ -84,6 +88,26 @@ class ProductDetailView extends StatelessWidget {
           }
           return const SizedBox();
         },
+      ),
+      bottomNavigationBar: Row(
+        children: [
+          CustomProductViewBtn(
+            btnColor: kPrimaryColor,
+            btnText: "Buy now",
+            btnTextColor: kSecondaryBackgroundColor,
+            onClick: () {
+              print("Tapped");
+            },
+          ),
+          CustomProductViewBtn(
+            btnColor: Colors.white,
+            btnText: "Add to cart",
+            btnTextColor: Colors.black,
+            onClick: () {
+              print("Tapped");
+            },
+          )
+        ],
       ),
     );
   }

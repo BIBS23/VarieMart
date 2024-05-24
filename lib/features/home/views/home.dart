@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:variemart/core/colors.dart';
+import 'package:variemart/features/cart/views/cart_view.dart';
 import 'package:variemart/features/home/bloc/home_bloc.dart';
 import 'package:variemart/features/products/bloc/product_bloc.dart';
 import 'package:variemart/features/products/views/product_view.dart';
@@ -20,6 +21,17 @@ class HomeView extends StatelessWidget {
               color: Colors.white, fontWeight: FontWeight.w500, fontSize: 18),
         ),
         backgroundColor: kPrimaryColor,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CartView()));
+              },
+              icon: const Icon(
+                Icons.shopping_basket_outlined,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: BlocConsumer<HomeBloc, HomeState>(
         listener: (context, state) {},
@@ -45,11 +57,12 @@ class HomeView extends StatelessWidget {
                             productId:
                                 successState.allProducts[index].id.toString()),
                       );
-                    
+
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ProductDetailView()),);
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProductDetailView()),
+                      );
                     },
                     child: ProductCard(
                         title: successState.allProducts[index].title,

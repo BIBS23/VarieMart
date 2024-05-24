@@ -24,11 +24,16 @@ class ProductCard extends StatelessWidget {
               width: 130,
               height: 100,
             ),
-             const SizedBox(height: 10),
-            Text(title,style: const TextStyle(overflow: TextOverflow.ellipsis),),
-            
             const SizedBox(height: 10),
-            Text("₹ $price",style: const TextStyle(fontWeight: FontWeight.w600,fontSize: 15),)
+            Text(
+              title,
+              style: const TextStyle(overflow: TextOverflow.ellipsis),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "\$ $price",
+              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+            )
           ],
         ),
       ),
